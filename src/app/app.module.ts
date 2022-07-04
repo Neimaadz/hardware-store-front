@@ -8,13 +8,19 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
+import { AuthenticationComponent } from './authentication/authentication.component';
+import { SigninComponent } from './authentication/signin/signin.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './jwt.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarMenuComponent,
     HomepageComponent,
-    FooterComponent
+    FooterComponent,
+    AuthenticationComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +28,9 @@ import { MaterialModule } from './material.module';
     AppRoutingModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
