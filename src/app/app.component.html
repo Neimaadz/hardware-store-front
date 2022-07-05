@@ -1,6 +1,44 @@
 
-<app-navbar-menu></app-navbar-menu>
 
-<router-outlet></router-outlet>
+<div class="container" 
+    [class.is-mobile]="mobileQuery.matches"
+>
+    <mat-toolbar color="primary" class="toolbar">
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span class="app-name">Hardware Store</span>
+    </mat-toolbar>
 
-<app-footer></app-footer>
+
+    <mat-sidenav-container
+        class="sidenav-container" 
+        [style.marginTop.px]="mobileQuery.matches ? 56 : 0"
+    >
+
+        <mat-sidenav
+            #snav 
+            [mode]="'over'"
+            [fixedInViewport]="mobileQuery.matches"
+            fixedTopGap="56"
+            class="sidenav"
+        >
+            <mat-nav-list class="sidenav__list" mode="side">
+                <a mat-list-item routerLink="." ><mat-icon>handyman</mat-icon> Visserie</a>
+                <a mat-list-item routerLink="." ><mat-icon>donut_small</mat-icon> Boulonnerie</a>
+                <a mat-list-item routerLink="." ><mat-icon>build</mat-icon> Fixation</a>
+                <a mat-list-item routerLink="." ><mat-icon>power</mat-icon> Outillage</a>
+                <a mat-list-item routerLink="." ><mat-icon>home_repair_service</mat-icon> Maintenance</a>
+                <a mat-list-item routerLink="." >Divers</a>
+                <a mat-list-item routerLink="." >A Propos</a>
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content class="app-content">
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+
+        <app-footer></app-footer>
+    
+    </mat-sidenav-container>
+</div>
