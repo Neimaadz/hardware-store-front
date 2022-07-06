@@ -8,6 +8,11 @@
             <mat-icon>menu</mat-icon>
         </button>
         <span class="app-name">Hardware Store</span>
+        <div class="account">
+            <button mat-icon-button>
+                <mat-icon>account_circle</mat-icon>
+            </button>
+        </div>
     </mat-toolbar>
 
 
@@ -24,21 +29,23 @@
             class="sidenav"
         >
             <mat-nav-list class="sidenav__list" mode="side">
-                <a mat-list-item routerLink="." ><mat-icon>handyman</mat-icon> Visserie</a>
-                <a mat-list-item routerLink="." ><mat-icon>donut_small</mat-icon> Boulonnerie</a>
-                <a mat-list-item routerLink="." ><mat-icon>build</mat-icon> Fixation</a>
-                <a mat-list-item routerLink="." ><mat-icon>power</mat-icon> Outillage</a>
-                <a mat-list-item routerLink="." ><mat-icon>home_repair_service</mat-icon> Maintenance</a>
+                <a mat-list-item routerLink="." ><mat-icon class="sidenav__list__icon">handyman</mat-icon> Visserie</a>
+                <a mat-list-item routerLink="." ><mat-icon class="sidenav__list__icon">donut_small</mat-icon> Boulonnerie</a>
+                <a mat-list-item routerLink="." ><mat-icon class="sidenav__list__icon">build</mat-icon> Fixation</a>
+                <a mat-list-item routerLink="." ><mat-icon class="sidenav__list__icon">power</mat-icon> Outillage</a>
+                <a mat-list-item routerLink="." ><mat-icon class="sidenav__list__icon">home_repair_service</mat-icon> Maintenance</a>
                 <a mat-list-item routerLink="." >Divers</a>
                 <a mat-list-item routerLink="." >A Propos</a>
             </mat-nav-list>
         </mat-sidenav>
 
-        <mat-sidenav-content class="app-content">
-            <router-outlet></router-outlet>
+        <mat-sidenav-content>
+            <div class="app-content">
+                <router-outlet></router-outlet>
+            </div>
+            <app-footer></app-footer>
         </mat-sidenav-content>
 
-        <app-footer></app-footer>
     
     </mat-sidenav-container>
 </div>

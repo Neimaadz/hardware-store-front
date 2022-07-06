@@ -13,6 +13,13 @@
     position: fixed;
     /* Make sure the toolbar will stay on top of the content as it scrolls past. */
     z-index: 2;
+
+}
+
+.account {
+    position: absolute;
+    right: 0px;
+    margin-right: 1em;
 }
 
 span.app-name {
@@ -23,6 +30,9 @@ span.app-name {
     width: 15em;
 
     &__list{
+        &__icon {
+            margin-right: 0.6em;
+        }
     }
 }
 .sidenav-container {
@@ -36,4 +46,7 @@ span.app-name {
         `<body>` to be our scrolling element for mobile layouts. */
     flex: 1 0 auto;
 }
-  
+
+.app-content {
+    min-height: 90vh;
+}
