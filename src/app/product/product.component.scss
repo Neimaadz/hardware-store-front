@@ -1,0 +1,19 @@
+
+.card-container {
+    display: flex;
+    flex-direction: row;    
+    flex-wrap: wrap;    // wrap onto multiple lines (from top to bottom)
+    justify-content: center;
+    margin: 3em;
+    gap: 3em;
+}
+
+
+.card-content {
+    max-width: 300px;
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}

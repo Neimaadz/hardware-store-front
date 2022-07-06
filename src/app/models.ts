@@ -11,5 +11,12 @@ export interface TokenUserPayload {
 export interface Product {
     id: number;
     name: string;
-    imagePath: string;
+    fabricant: string;
+    categorie: string;
+    longueur: string;
+    diametre: string;
+    taille: string;
+    composition: string;
+    norme: string;
+    image: string;
 }

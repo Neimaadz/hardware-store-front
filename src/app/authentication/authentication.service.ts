@@ -8,8 +8,8 @@ import { TokenUserPayload, User } from '../models';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  serverUrl = environment.apiURL;
-  signinPath = '/hardware-store-api/v1/authentication';
+  apiURL = environment.apiURL;
+//   apiPath = '/hardware-store-api/v1';
   
   public currentUserSubject: BehaviorSubject<User | null>;
   public token: string = localStorage.getItem('token') || '';
@@ -26,7 +26,7 @@ export class AuthenticationService {
 
   // public register(username: string, password: string): Observable<TokenUserPayload> {
   //     return this.http.post<TokenUserPayload>(
-  //         `${this.serverUrl}${this.registerPath}`,
+  //         `${this.apiURL}`,
   //         { username, password }
   //     )
   //     .pipe(map((payload: TokenUserPayload) => {
@@ -42,7 +42,7 @@ export class AuthenticationService {
 
   public signin(username: string, password: string): Observable<TokenUserPayload> {
       return this.http.post<TokenUserPayload>(
-          `${this.serverUrl}${this.signinPath}`,
+          `${this.apiURL}/authentication`,
           {username, password}
       )
       .pipe(map((payload: TokenUserPayload) => {
