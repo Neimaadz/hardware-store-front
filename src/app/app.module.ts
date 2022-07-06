@@ -10,8 +10,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { SigninComponent } from './authentication/signin/signin.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './jwt.interceptor';
+import { ProductComponent } from './product/product.component';
+import { ProductCardComponent } from './product/product-card/product-card.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -20,12 +24,18 @@ import { JwtInterceptor } from './jwt.interceptor';
     HomepageComponent,
     FooterComponent,
     AuthenticationComponent,
-    SigninComponent
+    SigninComponent,
+    ProductComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
+    HttpClientModule,
     MaterialModule
   ],
   providers: [

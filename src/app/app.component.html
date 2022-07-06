@@ -9,9 +9,25 @@
         </button>
         <span class="app-name">Hardware Store</span>
         <div class="account">
-            <button mat-icon-button>
+            <button mat-icon-button [matMenuTriggerFor]="menu">
                 <mat-icon>account_circle</mat-icon>
             </button>
+            <mat-menu #menu="matMenu">
+                <a mat-menu-item routerLink="signin" *ngIf="!currentUser">
+                  <mat-icon>login</mat-icon>
+                  <span>Signin</span>
+                </a>
+                <div *ngIf="currentUser">
+                    <a mat-menu-item>
+                        <mat-icon>settings</mat-icon>
+                        <span>Settings</span>
+                    </a>
+                    <a mat-menu-item (click)="signout()">
+                        <mat-icon>logout</mat-icon>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </mat-menu>
         </div>
     </mat-toolbar>
 
