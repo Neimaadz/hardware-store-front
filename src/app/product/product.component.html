@@ -4,11 +4,11 @@
 
 <div class="card-container">
 
-    <div *ngFor="let product of products ; let index=index">
+    <div *ngFor="let product of products">
         <app-product-card
             [products]="products"
             [product]="product"
-            [index]="index"
+            (productDeletedEvent)="deleteProduct($event)"
         >
         </app-product-card>
     </div>

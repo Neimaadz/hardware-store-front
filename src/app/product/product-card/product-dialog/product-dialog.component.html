@@ -1,0 +1,36 @@
+
+<h2 mat-dialog-title class="title">Update product</h2>
+<div mat-dialog-content class="dialog-content">
+    <mat-form-field appearance="legacy">
+        <mat-label>Nom</mat-label>
+        <input matInput [(ngModel)]="data.name">
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+        <mat-label>Fabricant</mat-label>
+        <input matInput [(ngModel)]="data.fabricant">
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+        <mat-label>Longueur</mat-label>
+        <input matInput [(ngModel)]="data.longueur">
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+        <mat-label>Diamètre</mat-label>
+        <input matInput [(ngModel)]="data.diametre">
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+        <mat-label>Taille</mat-label>
+        <input matInput [(ngModel)]="data.taille">
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+        <mat-label>Composition</mat-label>
+        <input matInput [(ngModel)]="data.composition">
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+        <mat-label>Norme</mat-label>
+        <input matInput [(ngModel)]="data.norme">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions class="button-action">
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-raised-button (click)="updateProduct(data)" color="primary" cdkFocusInitial>Update</button>
+</div>

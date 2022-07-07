@@ -5,19 +5,19 @@
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>{{product.name}}</mat-card-title>
-        <mat-card-subtitle>{{product.fabricant}}</mat-card-subtitle>
-        <mat-card-subtitle>{{product.categorie}}</mat-card-subtitle>
+        <mat-card-subtitle>Categorie : {{product.categorie}}</mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
     <mat-card-content>
-        <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-        </p>
+        <p>Fabricant : {{product.fabricant}}</p>
+        <p>Longueur : {{product.longueur}}</p>
+        <p>Diamètre : {{product.diametre}}</p>
+        <p>Taille : {{product.taille}}</p>
+        <p>Composition : {{product.composition}}</p>
+        <p>Norme : {{product.norme}}</p>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-raised-button color="primary"><mat-icon class="action-icon">update</mat-icon>Update</button>
-        <button mat-raised-button color="warn"><mat-icon class="action-icon">delete</mat-icon>DELETE</button>
+        <button mat-raised-button color="primary" (click)="openDialog()"><mat-icon class="action-icon">update</mat-icon>Update</button>
+        <button mat-raised-button color="warn" (click)="deleteProduct()"><mat-icon class="action-icon">delete</mat-icon>DELETE</button>
     </mat-card-actions>
 </mat-card>

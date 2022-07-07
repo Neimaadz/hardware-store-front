@@ -19,5 +19,23 @@ export class ProductService {
         `${this.apiURL}/products`
       );
   }
+  deleteProduct(id: number): Observable<void> {
+    return this.http
+      .delete<void>(
+        `${this.apiURL}/product/${id}`,
+      )
+      // .pipe(
+      //     catchError(this.handleError)
+      // );
+  }
+  updateProduct(id: number, product: Product): Observable<Product> {
+    return this.http
+      .put<Product>(
+        `${this.apiURL}/product/${id}`, product
+      )
+      // .pipe(
+      //     catchError(this.handleError)
+      // );
+  }
 
 }

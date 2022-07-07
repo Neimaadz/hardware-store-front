@@ -16,6 +16,8 @@ import { ProductComponent } from './product/product.component';
 import { ProductCardComponent } from './product/product-card/product-card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ProductDialogComponent } from './product/product-card/product-dialog/product-dialog.component';
+import { ConfirmDialogComponent } from './utils/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { CommonModule } from '@angular/common';
     AuthenticationComponent,
     SigninComponent,
     ProductComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductDialogComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
