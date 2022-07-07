@@ -8,7 +8,7 @@ import { ProductComponent } from './product/product.component';
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'signin', component: SigninComponent },
-  { path: 'product', component: ProductComponent, canActivate: [AuthenticationGuard] }
+  { path: 'product/:type', component: ProductComponent, canActivate: [AuthenticationGuard] }
 ];
 
 @NgModule({

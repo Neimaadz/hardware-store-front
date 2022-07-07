@@ -10,7 +10,7 @@ export class ProductCardComponent implements OnInit {
 
   @Input() products: any;
   @Input() product!: Product;
-  @Input() index:any;
+  @Input() index: any;
 
   constructor() { }
 

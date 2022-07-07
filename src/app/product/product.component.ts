@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Product } from '../models';
 import { ProductService } from './product.service';
 
@@ -9,13 +10,20 @@ import { ProductService } from './product.service';
 })
 export class ProductComponent implements OnInit {
 
+  type: string;
   products: Product[];
 
-  constructor(private productService: ProductService) { }
+  constructor(private route: ActivatedRoute, private productService: ProductService) {
+  }
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe(product => {
-      this.products = product;
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.type = params.get('type')!
+
+      this.productService.getProducts().subscribe(product => {
+        this.products = product.filter(product => product.categorie === this.type);
+      })
+      
     })
   }
 
