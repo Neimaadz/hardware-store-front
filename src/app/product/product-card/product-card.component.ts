@@ -13,7 +13,6 @@ export class ProductCardComponent implements OnInit {
 
   @Input() products: any;
   @Input() product!: Product;
-  @Input() index: any;
   @Output() productDeletedEvent: EventEmitter<number> = new EventEmitter<number>();
 
   constructor(private productService: ProductService, private dialog: MatDialog) { }
