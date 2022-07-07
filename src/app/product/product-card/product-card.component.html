@@ -16,7 +16,7 @@
         <p>Composition : {{product.composition}}</p>
         <p>Norme : {{product.norme}}</p>
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions *ngIf="currentUser">
         <button mat-raised-button color="primary" (click)="openDialog()"><mat-icon class="action-icon">update</mat-icon>Update</button>
         <button mat-raised-button color="warn" (click)="deleteProduct()"><mat-icon class="action-icon">delete</mat-icon>DELETE</button>
     </mat-card-actions>

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Product } from 'src/app/models';
+import { AuthenticationService } from 'src/app/authentication/authentication.service';
+import { Product, User } from 'src/app/models';
 import { ConfirmDialogComponent, ConfirmDialogModel } from 'src/app/utils/confirm-dialog/confirm-dialog.component';
 import { ProductService } from '../product.service';
 import { ProductDialogComponent } from './product-dialog/product-dialog.component';
@@ -11,12 +12,21 @@ import { ProductDialogComponent } from './product-dialog/product-dialog.componen
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent implements OnInit {
+  currentUser: User | null;
 
   @Input() products: any;
   @Input() product!: Product;
   @Output() productDeletedEvent: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor(private productService: ProductService, private dialog: MatDialog) { }
+  constructor(private productService: ProductService,
+    private dialog: MatDialog,
+    private authenticationService: AuthenticationService) {
+
+      this.authenticationService.currentUserSubject.subscribe((user: User | null) => {
+        this.currentUser = this.authenticationService.currentUserValue
+      });
+
+  }
 
   ngOnInit(): void {
   }

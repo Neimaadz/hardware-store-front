@@ -14,13 +14,13 @@ import { ProductService } from '../../product.service';
 export class ProductDialogComponent {
   form: FormGroup;
 
-  constructor(
-    public dialogRef: MatDialogRef<ProductDialogComponent>,
+  constructor(public dialogRef: MatDialogRef<ProductDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Product,
     private productService: ProductService,
     private _snackBar: MatSnackBar,
     private dialog: MatDialog, 
     private fb: FormBuilder) {
+
       this.form = this.fb.group({
         name: '',
         fabricant: '',
@@ -30,7 +30,9 @@ export class ProductDialogComponent {
         taille: '',
         composition:'',
         norme: ''
-      })}
+      })
+
+  }
 
   onNoClick(): void {
     this.dialogRef.close();
