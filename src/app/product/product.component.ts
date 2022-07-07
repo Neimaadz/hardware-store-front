@@ -10,21 +10,23 @@ import { ProductService } from './product.service';
 })
 export class ProductComponent implements OnInit {
 
-  type: string;
+  type: any;
+  allProducts: Product[];
   products: Product[];
 
   constructor(private route: ActivatedRoute, private productService: ProductService) {
   }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params: ParamMap) => {
-      this.type = params.get('type')!
-
-      this.productService.getProducts().subscribe(product => {
-        this.products = product.filter(product => product.categorie === this.type);
+    this.productService.getProducts().subscribe(product => {
+      this.allProducts = product;
+    
+      this.route.paramMap.subscribe((params: ParamMap) => {
+        this.type = params.get('type')!
+        this.products = this.allProducts.filter(product => product.categorie === this.type);
       })
-      
     })
+    
   }
 
 }
