@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Product } from 'src/app/models';
+import { ConfirmDialogComponent, ConfirmDialogModel } from 'src/app/utils/confirm-dialog/confirm-dialog.component';
 import { ProductService } from '../product.service';
 import { ProductDialogComponent } from './product-dialog/product-dialog.component';
 
@@ -30,15 +31,35 @@ export class ProductCardComponent implements OnInit {
 
 
   deleteProduct(){
-    this.productService.deleteProduct(this.product.id)
-      .subscribe({
-          next: () => {
-              this.productDeletedEvent.emit(this.product.id);
-          },
-          // error: (error) => {
-          //     this.error = error;
-          // }
-      });
-      // this.posts.splice(this.index, 1);
+    const message = `Are you sure you want to do this?`;
+    const dialogData = new ConfirmDialogModel("Confirm Action", message);
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      width: '400px',
+      data: dialogData,
+    });
+
+    // Confirmation dialog
+    dialogRef.afterClosed().subscribe(dialogResult => {
+      if(dialogResult){
+        this.productService.deleteProduct(this.product.id)
+        .subscribe({
+            next: () => {
+                this.productDeletedEvent.emit(this.product.id);
+            },
+            // error: (error) => {
+            //     this.error = error;
+            // }
+        });
+        // this.posts.splice(this.index, 1);
+      }
+    });
+    
   }
+
+
+
+
+
+
+
 }
