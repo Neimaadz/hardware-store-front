@@ -2,7 +2,7 @@
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
+    grid-template-columns: repeat(auto-fill, minmax(300px, max-content));
     grid-gap: 3em;
     justify-content: center;
     margin: 3em 5em;
