@@ -23,7 +23,7 @@ export class ProductComponent implements OnInit {
     
       this.route.paramMap.subscribe((params: ParamMap) => {
         this.type = params.get('type')!
-        this.products = this.allProducts.filter(product => product.categorie === this.type);
+        this.products = this.allProducts.filter(product => product.type === this.type);
       })
     })
     

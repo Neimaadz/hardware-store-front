@@ -4,7 +4,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Product } from 'src/app/models';
 import { ConfirmDialogComponent, ConfirmDialogModel } from 'src/app/utils/confirm-dialog/confirm-dialog.component';
-import { ProductService } from '../../product.service';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-update-dialog',
@@ -24,7 +24,7 @@ export class ProductUpdateDialogComponent {
       this.form = this.formBuilder.group({
         name: '',
         fabricant: '',
-        categorie: data.categorie,
+        type: data.type,
         longueur: '',
         diametre:'',
         taille: '',
@@ -52,12 +52,12 @@ export class ProductUpdateDialogComponent {
     dialogRef.afterClosed().subscribe(dialogResult => {
       if(dialogResult){
         this.productService.updateProduct(id, product)
-        .subscribe({
-          next: res => {
-            this._snackBar.open("Successfully Updated", "close");
-            this.dialogRef.close();
-          }
-        })
+          .subscribe({
+            next: res => {
+              this._snackBar.open("Successfully Updated", "close");
+              this.dialogRef.close();
+            }
+          })
       }
     });
   }

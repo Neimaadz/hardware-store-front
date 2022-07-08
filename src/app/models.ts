@@ -12,11 +12,16 @@ export interface Product {
     id: number;
     name: string;
     fabricant: string;
-    categorie: string;
+    type: string;
     longueur: string;
     diametre: string;
     taille: string;
     composition: string;
     norme: string;
     image: string;
+}
+
+export interface ProductType {
+    id: number;
+    type: string;
 }

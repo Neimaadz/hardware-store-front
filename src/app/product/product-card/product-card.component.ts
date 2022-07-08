@@ -4,7 +4,7 @@ import { AuthenticationService } from 'src/app/authentication/authentication.ser
 import { Product, User } from 'src/app/models';
 import { ConfirmDialogComponent, ConfirmDialogModel } from 'src/app/utils/confirm-dialog/confirm-dialog.component';
 import { ProductService } from '../product.service';
-import { ProductUpdateDialogComponent } from './product-update-dialog/product-update-dialog.component';
+import { ProductUpdateDialogComponent } from '../product-update-dialog/product-update-dialog.component';
 
 @Component({
   selector: 'app-product-card',

@@ -16,9 +16,9 @@ import { ProductComponent } from './product/product.component';
 import { ProductCardComponent } from './product/product-card/product-card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ProductUpdateDialogComponent } from './product/product-card/product-update-dialog/product-update-dialog.component';
+import { ProductUpdateDialogComponent } from './product/product-update-dialog/product-update-dialog.component';
 import { ConfirmDialogComponent } from './utils/confirm-dialog/confirm-dialog.component';
-import { CreateProductComponent } from './product/create-product/create-product.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import { CreateProductComponent } from './product/create-product/create-product.
     ProductCardComponent,
     ProductUpdateDialogComponent,
     ConfirmDialogComponent,
-    CreateProductComponent
+    ProductCreateComponent
   ],
   imports: [
     BrowserModule,

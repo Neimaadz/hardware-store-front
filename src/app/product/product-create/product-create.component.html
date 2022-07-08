@@ -11,6 +11,14 @@
             <input matInput id="fabricant" name="fabricant" formControlName="fabricant">
         </mat-form-field>
         <mat-form-field appearance="legacy">
+            <mat-label>Type</mat-label>
+            <mat-select name="type" formControlName="type">
+              <mat-option *ngFor="let productType of productTypes" [value]="productType.id">
+                {{productType.type}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
             <mat-label>Longueur</mat-label>
             <input matInput id="longueur" name="longueur" formControlName="longueur">
         </mat-form-field>
