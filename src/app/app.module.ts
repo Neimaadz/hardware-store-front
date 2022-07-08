@@ -16,8 +16,9 @@ import { ProductComponent } from './product/product.component';
 import { ProductCardComponent } from './product/product-card/product-card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ProductDialogComponent } from './product/product-card/product-dialog/product-dialog.component';
+import { ProductUpdateDialogComponent } from './product/product-card/product-update-dialog/product-update-dialog.component';
 import { ConfirmDialogComponent } from './utils/confirm-dialog/confirm-dialog.component';
+import { CreateProductComponent } from './product/create-product/create-product.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +30,9 @@ import { ConfirmDialogComponent } from './utils/confirm-dialog/confirm-dialog.co
     SigninComponent,
     ProductComponent,
     ProductCardComponent,
-    ProductDialogComponent,
-    ConfirmDialogComponent
+    ProductUpdateDialogComponent,
+    ConfirmDialogComponent,
+    CreateProductComponent
   ],
   imports: [
     BrowserModule,

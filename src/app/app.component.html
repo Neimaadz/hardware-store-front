@@ -8,11 +8,25 @@
             <mat-icon>menu</mat-icon>
         </button>
         <span class="app-name">Hardware Store</span>
-        <div class="account">
-            <button mat-icon-button [matMenuTriggerFor]="menu">
+        <div class="user_menu_panel">
+            <button mat-icon-button [matMenuTriggerFor]="manage_menu" *ngIf="currentUser">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #manage_menu="matMenu">
+                <a mat-menu-item routerLink="/create/product">
+                  <mat-icon>add_box</mat-icon>
+                  <span>Add Product</span>
+                </a>
+                <button mat-menu-item>
+                  <mat-icon>update</mat-icon>
+                  <span>Manage Homepage</span>
+                </button>
+              </mat-menu>
+
+            <button mat-icon-button [matMenuTriggerFor]="account_menu">
                 <mat-icon>account_circle</mat-icon>
             </button>
-            <mat-menu #menu="matMenu">
+            <mat-menu #account_menu="matMenu">
                 <a mat-menu-item routerLink="signin" *ngIf="!currentUser">
                   <mat-icon>login</mat-icon>
                   <span>Signin</span>
@@ -24,7 +38,7 @@
                     </a>
                     <a mat-menu-item (click)="signout()">
                         <mat-icon>logout</mat-icon>
-                        <span>Logout</span>
+                        <span>Sign Out</span>
                     </a>
                 </div>
             </mat-menu>
@@ -45,13 +59,13 @@
             class="sidenav"
         >
             <mat-nav-list class="sidenav__list" mode="side">
-                <a mat-list-item routerLink="product/visserie" ><mat-icon class="sidenav__list__icon">handyman</mat-icon> Visserie</a>
-                <a mat-list-item routerLink="product/boulonnerie" ><mat-icon class="sidenav__list__icon">donut_small</mat-icon> Boulonnerie</a>
-                <a mat-list-item routerLink="product/fixation" ><mat-icon class="sidenav__list__icon">build</mat-icon> Fixation</a>
-                <a mat-list-item routerLink="product/outillage" ><mat-icon class="sidenav__list__icon">power</mat-icon> Outillage</a>
-                <a mat-list-item routerLink="product/maintenance" ><mat-icon class="sidenav__list__icon">home_repair_service</mat-icon> Maintenance</a>
-                <a mat-list-item routerLink="product" >Divers</a>
-                <a mat-list-item routerLink="product" >A Propos</a>
+                <a mat-list-item routerLink="/product/visserie" ><mat-icon class="sidenav__list__icon">handyman</mat-icon> Visserie</a>
+                <a mat-list-item routerLink="/product/boulonnerie" ><mat-icon class="sidenav__list__icon">donut_small</mat-icon> Boulonnerie</a>
+                <a mat-list-item routerLink="/product/fixation" ><mat-icon class="sidenav__list__icon">build</mat-icon> Fixation</a>
+                <a mat-list-item routerLink="/product/outillage" ><mat-icon class="sidenav__list__icon">power</mat-icon> Outillage</a>
+                <a mat-list-item routerLink="/product/maintenance" ><mat-icon class="sidenav__list__icon">home_repair_service</mat-icon> Maintenance</a>
+                <a mat-list-item routerLink="/product" >Divers</a>
+                <a mat-list-item routerLink="/product" >A Propos</a>
             </mat-nav-list>
         </mat-sidenav>
 
