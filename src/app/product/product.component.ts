@@ -32,6 +32,7 @@ export class ProductComponent implements OnInit {
 
   deleteProduct(id: number) {
     this.products = this.products.filter( product => product.id !== id);
+    this.allProducts = this.allProducts.filter( product => product.id !== id);
   }
 
 }

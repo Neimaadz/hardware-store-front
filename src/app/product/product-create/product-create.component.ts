@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ProductType } from 'src/app/models';
 import { ProductService } from '../product.service';
 
@@ -15,7 +16,8 @@ export class ProductCreateComponent implements OnInit {
   productTypes: ProductType[];
 
   constructor(private formBuilder: FormBuilder,
-    private productService: ProductService) {
+    private productService: ProductService,
+    private router: Router) {
 
       this.productService.getProductTypes().subscribe(productTypes => {
         this.productTypes = productTypes;
@@ -38,9 +40,12 @@ export class ProductCreateComponent implements OnInit {
   
   onSubmit(){
     const product = this.form.value;
+    const productType = this.productTypes.find(productType => productType.id === product.type)!.type;
 
     this.productService.createProduct(product).subscribe({
-      next: () => {}
+      next: () => {
+        this.router.navigate([`product/${productType}`]);
+      }
     });
   }
 
