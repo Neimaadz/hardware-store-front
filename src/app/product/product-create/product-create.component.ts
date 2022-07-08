@@ -12,6 +12,7 @@ import { ProductService } from '../product.service';
 export class ProductCreateComponent implements OnInit {
   form: FormGroup;
   selectedValue: string;
+  image!: File;
 
   productTypes: ProductType[];
 
@@ -42,11 +43,15 @@ export class ProductCreateComponent implements OnInit {
     const product = this.form.value;
     const productType = this.productTypes.find(productType => productType.id === product.type)!.type;
 
-    this.productService.createProduct(product).subscribe({
+    this.productService.createProduct(product, this.image).subscribe({
       next: () => {
         this.router.navigate([`product/${productType}`]);
       }
     });
+  }
+
+  uploadFile(file: File){
+    this.image = file;
   }
 
 }

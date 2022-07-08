@@ -7,7 +7,7 @@
         <mat-card-title>{{product.name}}</mat-card-title>
         <mat-card-subtitle>Type : {{product.type}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <img mat-card-image src="{{getImageFromServer()}}" alt="{{ product.name }}">
     <mat-card-content>
         <p>Fabricant : {{product.fabricant}}</p>
         <p>Longueur : {{product.longueur}}</p>

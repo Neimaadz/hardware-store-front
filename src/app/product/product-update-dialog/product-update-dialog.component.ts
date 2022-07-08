@@ -13,6 +13,7 @@ import { ProductService } from '../product.service';
 })
 export class ProductUpdateDialogComponent {
   form: FormGroup;
+  image!: File;
 
   constructor(public dialogRef: MatDialogRef<ProductUpdateDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Product,
@@ -51,15 +52,19 @@ export class ProductUpdateDialogComponent {
     // Confirmation dialog
     dialogRef.afterClosed().subscribe(dialogResult => {
       if(dialogResult){
-        this.productService.updateProduct(id, product)
+        this.productService.updateProduct(id, product, this.image)
           .subscribe({
             next: res => {
               this._snackBar.open("Successfully Updated", "close");
-              this.dialogRef.close();
+              this.dialogRef.close(res);
             }
           })
       }
     });
+  }
+  
+  uploadFile(file: File){
+    this.image = file;
   }
 
   

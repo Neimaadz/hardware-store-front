@@ -19,6 +19,7 @@ import { CommonModule } from '@angular/common';
 import { ProductUpdateDialogComponent } from './product/product-update-dialog/product-update-dialog.component';
 import { ConfirmDialogComponent } from './utils/confirm-dialog/confirm-dialog.component';
 import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { UploadFileComponent } from './utils/upload-file/upload-file.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ProductCreateComponent } from './product/product-create/product-create.
     ProductCardComponent,
     ProductUpdateDialogComponent,
     ConfirmDialogComponent,
-    ProductCreateComponent
+    ProductCreateComponent,
+    UploadFileComponent
   ],
   imports: [
     BrowserModule,

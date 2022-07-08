@@ -5,6 +5,7 @@ import { Product, User } from 'src/app/models';
 import { ConfirmDialogComponent, ConfirmDialogModel } from 'src/app/utils/confirm-dialog/confirm-dialog.component';
 import { ProductService } from '../product.service';
 import { ProductUpdateDialogComponent } from '../product-update-dialog/product-update-dialog.component';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-product-card',
@@ -13,6 +14,8 @@ import { ProductUpdateDialogComponent } from '../product-update-dialog/product-u
 })
 export class ProductCardComponent implements OnInit {
   currentUser: User | null;
+  apiURL = environment.apiURL;
+  timeStamp: number;
 
   @Input() products: any;
   @Input() product!: Product;
@@ -37,6 +40,11 @@ export class ProductCardComponent implements OnInit {
       width: '600px',
       data: this.product,
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+      // When product has updated
+      this.product.image = result.image;
+    });
   }
 
 
@@ -60,16 +68,14 @@ export class ProductCardComponent implements OnInit {
             //     this.error = error;
             // }
         });
-        // this.posts.splice(this.index, 1);
       }
     });
     
   }
 
-
-
-
-
+  getImageFromServer() {
+    return this.apiURL + '/public/images/products/' + this.product.image;
+  }
 
 
 }

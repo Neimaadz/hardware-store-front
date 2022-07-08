@@ -1,0 +1,12 @@
+
+<div class="file-upload">
+    <div class="mat-typography"> Image: </div>
+    
+    <input hidden type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload required>
+    {{fileName || "No file uploaded yet."}}
+
+    <button mat-mini-fab color="second" class="upload-btn" type="button"
+    (click)="fileUpload.click()">
+        <mat-icon>attach_file</mat-icon>
+    </button>
+</div>
