@@ -7,21 +7,21 @@ import { ConfirmDialogComponent, ConfirmDialogModel } from 'src/app/utils/confir
 import { ProductService } from '../../product.service';
 
 @Component({
-  selector: 'app-product-dialog',
-  templateUrl: './product-dialog.component.html',
-  styleUrls: ['./product-dialog.component.scss']
+  selector: 'app-product-update-dialog',
+  templateUrl: './product-update-dialog.component.html',
+  styleUrls: ['./product-update-dialog.component.scss']
 })
-export class ProductDialogComponent {
+export class ProductUpdateDialogComponent {
   form: FormGroup;
 
-  constructor(public dialogRef: MatDialogRef<ProductDialogComponent>,
+  constructor(public dialogRef: MatDialogRef<ProductUpdateDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Product,
     private productService: ProductService,
     private _snackBar: MatSnackBar,
     private dialog: MatDialog, 
-    private fb: FormBuilder) {
+    private formBuilder: FormBuilder) {
 
-      this.form = this.fb.group({
+      this.form = this.formBuilder.group({
         name: '',
         fabricant: '',
         categorie: data.categorie,
