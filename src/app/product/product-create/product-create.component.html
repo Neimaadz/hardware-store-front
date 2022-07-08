@@ -1,18 +1,18 @@
 
-<h2 mat-dialog-title class="title">Add Product</h2>
+<h2 class="title">Add Product</h2>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div mat-dialog-content class="content">
+    <div class="content">
         <mat-form-field appearance="legacy">
             <mat-label>Nom</mat-label>
-            <input matInput id="name" name="name" formControlName="name">
+            <input matInput id="name" name="name" formControlName="name" required>
         </mat-form-field>
         <mat-form-field appearance="legacy">
             <mat-label>Fabricant</mat-label>
-            <input matInput id="fabricant" name="fabricant" formControlName="fabricant">
+            <input matInput id="fabricant" name="fabricant" formControlName="fabricant" required>
         </mat-form-field>
         <mat-form-field appearance="legacy">
             <mat-label>Type</mat-label>
-            <mat-select name="type" formControlName="type">
+            <mat-select name="type" formControlName="type" required>
               <mat-option *ngFor="let productType of productTypes" [value]="productType.id">
                 {{productType.type}}
               </mat-option>
@@ -20,26 +20,26 @@
         </mat-form-field>
         <mat-form-field appearance="legacy">
             <mat-label>Longueur</mat-label>
-            <input matInput id="longueur" name="longueur" formControlName="longueur">
+            <input matInput id="longueur" name="longueur" formControlName="longueur" required>
         </mat-form-field>
         <mat-form-field appearance="legacy">
             <mat-label>Diamètre</mat-label>
-            <input matInput id="diametre" name="diametre" formControlName="diametre">
+            <input matInput id="diametre" name="diametre" formControlName="diametre" required>
         </mat-form-field>
         <mat-form-field appearance="legacy">
             <mat-label>Taille</mat-label>
-            <input matInput id="taille" name="taille" formControlName="taille">
+            <input matInput id="taille" name="taille" formControlName="taille" required>
         </mat-form-field>
         <mat-form-field appearance="legacy">
             <mat-label>Composition</mat-label>
-            <input matInput id="composition" name="composition" formControlName="composition">
+            <input matInput id="composition" name="composition" formControlName="composition" required>
         </mat-form-field>
         <mat-form-field appearance="legacy">
             <mat-label>Norme</mat-label>
-            <input matInput id="norme" name="norme" formControlName="norme">
+            <input matInput id="norme" name="norme" formControlName="norme" required>
         </mat-form-field>
     </div>
-    <div mat-dialog-actions class="button-action">
+    <div class="button-action">
         <button mat-raised-button color="primary" type="submit">Submit</button>
     </div>
 </form>
