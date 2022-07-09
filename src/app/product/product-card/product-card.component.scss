@@ -1,8 +1,8 @@
 
 
 
-.card-content {
-    max-width: 300px;
+.card-main {
+    width: 300px;
 }
 
 .example-header-image {
@@ -13,8 +13,19 @@
 .action-icon {
     margin-right: 0.2em;
 }
-
+.card-image {
+    width: 100%;
+    border: 1px solid black;
+}
 .image {
     width: 100%;
+    object-fit: cover;
     margin: 0 auto;
+    display: block;
+}
+.card-content {
+    margin-top: 1em;
+}
+.card-button-action {
+    text-align: center;
 }

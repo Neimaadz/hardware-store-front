@@ -1,43 +1,47 @@
 
 <h2 mat-dialog-title class="dialog-title">Update Product</h2>
-<form [formGroup]="form">
-    <div mat-dialog-content class="dialog-content">
-        <div class="image-container">
+<div mat-dialog-content>
+    <form [formGroup]="form" class="dialog-form">
+        <div class="dialog-image">
             <img class="image" mat-card-lg-image src="{{getImageFromAPI()}}" alt="{{ data.name }}">
         </div>
-        <mat-form-field appearance="legacy">
-            <mat-label>Nom</mat-label>
-            <input matInput id="name" name="name" formControlName="name" [(ngModel)]="data.name">
-        </mat-form-field>
-        <mat-form-field appearance="legacy">
-            <mat-label>Fabricant</mat-label>
-            <input matInput id="fabricant" name="fabricant" formControlName="fabricant" [(ngModel)]="data.fabricant">
-        </mat-form-field>
-        <mat-form-field appearance="legacy">
-            <mat-label>Longueur</mat-label>
-            <input matInput id="longueur" name="longueur" formControlName="longueur" [(ngModel)]="data.longueur">
-        </mat-form-field>
-        <mat-form-field appearance="legacy">
-            <mat-label>Diamètre</mat-label>
-            <input matInput id="diametre" name="diametre" formControlName="diametre" [(ngModel)]="data.diametre">
-        </mat-form-field>
-        <mat-form-field appearance="legacy">
-            <mat-label>Taille</mat-label>
-            <input matInput id="taille" name="taille" formControlName="taille" [(ngModel)]="data.taille">
-        </mat-form-field>
-        <mat-form-field appearance="legacy">
-            <mat-label>Composition</mat-label>
-            <input matInput id="composition" name="composition" formControlName="composition" [(ngModel)]="data.composition">
-        </mat-form-field>
-        <mat-form-field appearance="legacy">
-            <mat-label>Norme</mat-label>
-            <input matInput id="norme" name="norme" formControlName="norme" [(ngModel)]="data.norme">
-        </mat-form-field>
         
-        <app-upload-file (uploadFileEvent)="uploadFile($event)"></app-upload-file>
-    </div>
-    <div mat-dialog-actions class="dialog-button-action">
-        <button mat-button (click)="onNoClick()">Cancel</button>
-        <button mat-raised-button [disabled]="form.pristine && !isImageSelected" color="primary" (click)="updateProduct(data.id)" cdkFocusInitial>Update</button>
-    </div>
-</form>
+        <div class="dialog-form-field">
+            <mat-form-field appearance="legacy">
+                <mat-label>Nom</mat-label>
+                <input matInput id="name" name="name" formControlName="name" [(ngModel)]="data.name">
+            </mat-form-field>
+            <mat-form-field appearance="legacy">
+                <mat-label>Fabricant</mat-label>
+                <input matInput id="fabricant" name="fabricant" formControlName="fabricant" [(ngModel)]="data.fabricant">
+            </mat-form-field>
+            <mat-form-field appearance="legacy">
+                <mat-label>Longueur</mat-label>
+                <input matInput id="longueur" name="longueur" formControlName="longueur" [(ngModel)]="data.longueur">
+            </mat-form-field>
+            <mat-form-field appearance="legacy">
+                <mat-label>Diamètre</mat-label>
+                <input matInput id="diametre" name="diametre" formControlName="diametre" [(ngModel)]="data.diametre">
+            </mat-form-field>
+            <mat-form-field appearance="legacy">
+                <mat-label>Taille</mat-label>
+                <input matInput id="taille" name="taille" formControlName="taille" [(ngModel)]="data.taille">
+            </mat-form-field>
+            <mat-form-field appearance="legacy">
+                <mat-label>Composition</mat-label>
+                <input matInput id="composition" name="composition" formControlName="composition" [(ngModel)]="data.composition">
+            </mat-form-field>
+            <mat-form-field appearance="legacy">
+                <mat-label>Norme</mat-label>
+                <input matInput id="norme" name="norme" formControlName="norme" [(ngModel)]="data.norme">
+            </mat-form-field>
+            
+            <app-upload-file (uploadFileEvent)="uploadFile($event)"></app-upload-file>
+        </div>
+
+        <div mat-dialog-actions class="dialog-button-action">
+            <button mat-button (click)="onNoClick()">Cancel</button>
+            <button mat-raised-button [disabled]="form.pristine && !isImageSelected" color="primary" (click)="updateProduct(data.id)" cdkFocusInitial>Update</button>
+        </div>
+    </form>
+</div>

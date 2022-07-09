@@ -6,6 +6,7 @@ import { ConfirmDialogComponent, ConfirmDialogModel } from 'src/app/utils/confir
 import { ProductService } from '../product.service';
 import { ProductUpdateDialogComponent } from '../product-update-dialog/product-update-dialog.component';
 import { environment } from 'src/environments/environment';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-product-card',
@@ -23,7 +24,8 @@ export class ProductCardComponent implements OnInit {
 
   constructor(private productService: ProductService,
     private dialog: MatDialog,
-    private authenticationService: AuthenticationService) {
+    private authenticationService: AuthenticationService,
+    private _snackBar: MatSnackBar) {
 
       this.authenticationService.currentUserSubject.subscribe((user: User | null) => {
         this.currentUser = this.authenticationService.currentUserValue
@@ -63,6 +65,7 @@ export class ProductCardComponent implements OnInit {
         .subscribe({
             next: () => {
                 this.productDeletedEvent.emit(this.product.id);
+                this._snackBar.open("Successfully Deleted", "close", {duration: 3000, panelClass: ['success-snackbar']});
             },
             // error: (error) => {
             //     this.error = error;

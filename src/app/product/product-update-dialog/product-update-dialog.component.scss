@@ -2,19 +2,25 @@
 .dialog-title {
     text-align: center;
 }
-.dialog-content {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
+.dialog-form {
+    width: 80%;
     margin: 0 auto;
 }
-.dialog-button-action {
-    justify-content: center;
-}
-.image-container {
-    margin: 1em;
+.dialog-image {
+    width: 100%;
+    border: 1px solid black;
 }
 .image {
     width: 100%;
+    object-fit: cover;
     margin: 0 auto;
+    display: block;
+}
+.dialog-form-field {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+.dialog-button-action {
+    justify-content: center;
 }

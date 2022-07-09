@@ -1,14 +1,19 @@
 
 
 
-<mat-card class="card-content">
-    <mat-card-header>
+<mat-card class="card-main">
+    
+    <mat-card-header class="card-header">
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>{{product.name}}</mat-card-title>
         <mat-card-subtitle>Type : {{product.type}}</mat-card-subtitle>
     </mat-card-header>
-    <img class="image" mat-card-xl-image src="{{getImageFromAPI()}}" alt="{{ product.name }}">
-    <mat-card-content>
+
+    <div class="card-image">
+        <img class="image" mat-card-xl-image src="{{getImageFromAPI()}}" alt="{{ product.name }}">
+    </div>
+
+    <mat-card-content class="card-content">
         <p>Fabricant : {{product.fabricant}}</p>
         <p>Longueur : {{product.longueur}}</p>
         <p>Diamètre : {{product.diametre}}</p>
@@ -16,8 +21,10 @@
         <p>Composition : {{product.composition}}</p>
         <p>Norme : {{product.norme}}</p>
     </mat-card-content>
-    <mat-card-actions *ngIf="currentUser">
+
+    <mat-card-actions *ngIf="currentUser" class="card-button-action">
         <button mat-raised-button color="primary" (click)="openDialog()"><mat-icon class="action-icon">edit</mat-icon>Update</button>
         <button mat-raised-button color="warn" (click)="deleteProduct()"><mat-icon class="action-icon">delete</mat-icon>DELETE</button>
     </mat-card-actions>
+
 </mat-card>

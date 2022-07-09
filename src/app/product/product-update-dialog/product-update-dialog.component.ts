@@ -58,7 +58,7 @@ export class ProductUpdateDialogComponent {
         this.productService.updateProduct(id, product, this.image)
           .subscribe({
             next: res => {
-              this._snackBar.open("Successfully Updated", "close");
+              this._snackBar.open("Successfully Updated", "close", {duration: 3000, panelClass: ['success-snackbar']});
               this.dialogRef.close(res);
             }
           })
