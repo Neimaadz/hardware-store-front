@@ -35,6 +35,6 @@
     </div>
     <div mat-dialog-actions class="dialog-button-action">
         <button mat-button (click)="onNoClick()">Cancel</button>
-        <button mat-raised-button [disabled]="form.pristine" color="primary" (click)="updateProduct(data.id)" cdkFocusInitial>Update</button>
+        <button mat-raised-button [disabled]="form.pristine && !isImageSelected" color="primary" (click)="updateProduct(data.id)" cdkFocusInitial>Update</button>
     </div>
 </form>

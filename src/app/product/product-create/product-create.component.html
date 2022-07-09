@@ -42,6 +42,6 @@
         <app-upload-file (uploadFileEvent)="uploadFile($event)"></app-upload-file>
     </div>
     <div class="button-action">
-        <button mat-raised-button color="primary" type="submit">Submit</button>
+        <button mat-raised-button [disabled]="form.pristine && !isImageSelected" color="primary" color="primary" type="submit">Submit</button>
     </div>
 </form>

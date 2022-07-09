@@ -13,6 +13,7 @@ export class ProductCreateComponent implements OnInit {
   form: FormGroup;
   selectedValue: string;
   image!: File;
+  isImageSelected: boolean = false;
 
   productTypes: ProductType[];
 
@@ -52,6 +53,7 @@ export class ProductCreateComponent implements OnInit {
 
   uploadFile(file: File){
     this.image = file;
+    this.isImageSelected = true;
   }
 
 }

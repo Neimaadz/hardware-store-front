@@ -14,6 +14,7 @@ import { ProductService } from '../product.service';
 export class ProductUpdateDialogComponent {
   form: FormGroup;
   image!: File;
+  isImageSelected: boolean = false;
 
   constructor(public dialogRef: MatDialogRef<ProductUpdateDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Product,
@@ -65,6 +66,7 @@ export class ProductUpdateDialogComponent {
   
   uploadFile(file: File){
     this.image = file;
+    this.isImageSelected = true;
   }
 
   
