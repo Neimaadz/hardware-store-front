@@ -4,6 +4,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Product } from 'src/app/models';
 import { ConfirmDialogComponent, ConfirmDialogModel } from 'src/app/utils/confirm-dialog/confirm-dialog.component';
+import { environment } from 'src/environments/environment';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class ProductUpdateDialogComponent {
   form: FormGroup;
   image!: File;
   isImageSelected: boolean = false;
+  apiURL = environment.apiURL;
 
   constructor(public dialogRef: MatDialogRef<ProductUpdateDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Product,
@@ -69,5 +71,8 @@ export class ProductUpdateDialogComponent {
     this.isImageSelected = true;
   }
 
+  getImageFromAPI() {
+    return this.apiURL + '/public/images/products/' + this.data.image;
+  }
   
 }

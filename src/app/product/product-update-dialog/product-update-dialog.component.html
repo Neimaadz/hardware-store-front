@@ -2,6 +2,9 @@
 <h2 mat-dialog-title class="dialog-title">Update Product</h2>
 <form [formGroup]="form">
     <div mat-dialog-content class="dialog-content">
+        <div class="image-container">
+            <img class="image" mat-card-lg-image src="{{getImageFromAPI()}}" alt="{{ data.name }}">
+        </div>
         <mat-form-field appearance="legacy">
             <mat-label>Nom</mat-label>
             <input matInput id="name" name="name" formControlName="name" [(ngModel)]="data.name">

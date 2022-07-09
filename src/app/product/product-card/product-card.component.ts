@@ -37,7 +37,7 @@ export class ProductCardComponent implements OnInit {
   
   openDialog(): void {
     const dialogRef = this.dialog.open(ProductUpdateDialogComponent, {
-      width: '600px',
+      width: '800px',
       data: this.product,
     });
 
