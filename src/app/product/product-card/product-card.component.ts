@@ -73,7 +73,7 @@ export class ProductCardComponent implements OnInit {
     
   }
 
-  getImageFromServer() {
+  getImageFromAPI() {
     return this.apiURL + '/public/images/products/' + this.product.image;
   }
 
