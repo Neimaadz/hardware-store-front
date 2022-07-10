@@ -15,7 +15,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ProductCardComponent implements OnInit {
   currentUser: User | null;
-  apiURL = environment.apiURL;
+  apiImageURL = environment.apiImageURL;
   timeStamp: number;
 
   @Input() products: any;
@@ -77,7 +77,7 @@ export class ProductCardComponent implements OnInit {
   }
 
   getImageFromAPI() {
-    return this.apiURL + '/public/images/products/' + this.product.image;
+    return this.apiImageURL + '/' + this.product.image;
   }
 
 

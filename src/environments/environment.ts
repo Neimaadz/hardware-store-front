@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiURL: 'http://localhost:3306/hardware-store-api/v1'
+  apiURL: 'http://localhost:3306/hardware-store-api/v1',
+  apiImageURL: 'http://localhost:3306/hardware-store-api/v1/public/images/product'
 };
 
 /*
