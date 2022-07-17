@@ -1,16 +1,3 @@
 
 
 
-.main {
-    min-height: 100vh;
-}
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, max-content));
-    grid-gap: 3em;
-    justify-content: center;
-    margin: 3em auto;
-}
-.paginator {
-    margin-top:auto;
-}
