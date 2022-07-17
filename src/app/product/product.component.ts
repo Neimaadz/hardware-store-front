@@ -18,8 +18,8 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe(product => {
-      this.allProducts = product;
+    this.productService.getProducts().subscribe(products => {
+      this.allProducts = products;
     
       this.route.paramMap.subscribe((params: ParamMap) => {
         this.type = params.get('type')!

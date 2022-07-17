@@ -25,3 +25,9 @@ export interface ProductType {
     id: number;
     type: string;
 }
+
+export interface HomepageImages {
+    id: number;
+    type: string;
+    image: string;
+}

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HomepageImages } from '../models';
+import { HomepageService } from './homepage.service';
 
 @Component({
   selector: 'app-homepage',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  welcomeImages: HomepageImages[];
+  newsImages: HomepageImages[];
+
+  constructor(private homepageService: HomepageService) { }
 
   ngOnInit(): void {
+    this.homepageService.getWelcomeImages().subscribe(welcomeImages => {
+      this.welcomeImages = welcomeImages;
+    })
+    this.homepageService.getNewsImages().subscribe(newsImages => {
+      this.newsImages = newsImages;
+    })
   }
 
 }

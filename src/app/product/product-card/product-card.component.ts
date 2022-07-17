@@ -21,7 +21,7 @@ export class ProductCardComponent implements OnInit, OnChanges {
   @ViewChild('paginator') paginator: MatPaginator;
 
   currentUser: User | null;
-  apiImageURL = environment.apiImageURL;
+  apiImageURL = environment.apiProductImageURL;
   timeStamp: number;
 
   constructor(private productService: ProductService,

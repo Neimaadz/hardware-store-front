@@ -20,6 +20,10 @@ import { ProductUpdateDialogComponent } from './product/product-update-dialog/pr
 import { ConfirmDialogComponent } from './utils/confirm-dialog/confirm-dialog.component';
 import { ProductCreateComponent } from './product/product-create/product-create.component';
 import { UploadFileComponent } from './utils/upload-file/upload-file.component';
+import { HomepageWelcomeComponent } from './homepage/homepage-welcome/homepage-welcome.component';
+import { HomepageNewsComponent } from './homepage/homepage-news/homepage-news.component';
+import { WelcomeCarouselComponent } from './homepage/homepage-welcome/welcome-carousel/welcome-carousel.component';
+import { NewsCarouselComponent } from './homepage/homepage-news/news-carousel/news-carousel.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import { UploadFileComponent } from './utils/upload-file/upload-file.component';
     ProductUpdateDialogComponent,
     ConfirmDialogComponent,
     ProductCreateComponent,
-    UploadFileComponent
+    UploadFileComponent,
+    HomepageWelcomeComponent,
+    HomepageNewsComponent,
+    WelcomeCarouselComponent,
+    NewsCarouselComponent
   ],
   imports: [
     BrowserModule,

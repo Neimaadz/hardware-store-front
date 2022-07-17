@@ -1,0 +1,21 @@
+
+.carousel-news {
+    width: 56%;
+    margin: 0 auto;
+}
+.carousel-image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+  
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+

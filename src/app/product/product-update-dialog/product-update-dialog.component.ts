@@ -16,7 +16,7 @@ export class ProductUpdateDialogComponent {
   form: FormGroup;
   image!: File;
   isImageSelected: boolean = false;
-  apiImageURL = environment.apiImageURL;
+  apiImageURL = environment.apiProductImageURL;
 
   constructor(public dialogRef: MatDialogRef<ProductUpdateDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Product,
