@@ -1,10 +1,11 @@
 
 .carousel-news {
-    width: 56%;
+    max-width: 88vh;
     margin: 0 auto;
 }
 .carousel-image img {
     width: 100%;
+    margin-bottom: -4px;
     object-fit: cover;
 }
 

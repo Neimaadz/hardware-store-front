@@ -1,10 +1,11 @@
 
 .carousel-welcome {
-    width: 76%;
+    max-width: 120vh;
     margin: 0 auto;
 }
 .carousel-image img {
     width: 100%;
+    margin-bottom: -4px;
     object-fit: cover;
 }
 

@@ -4,14 +4,16 @@
     min-height: 100vh;
 }
 .homepage-welcome {
-    margin-bottom: 3em;
 }
 .homepage-news {
-    margin-top: 3em;
-    margin-bottom: 3em;
 }
-.sub-title {
+.banner {
     width: 100%;
-    height: 10em;
-    background-color: rgb(160, 160, 160);
+    height: 20vh;
+    background-color: rgb(30, 54, 77);
+}
+.section {
+    width: 100%;
+    height: 20vh;
+    background-color: rgb(245, 237, 220);
 }
