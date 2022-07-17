@@ -22,7 +22,11 @@
     margin-right: 1em;
 }
 
-span.app-name {
+.toolbar a {
+    text-decoration: none;
+    color: white;
+}
+span .app-name {
     margin-left: 8px;
 }
 
@@ -48,5 +52,13 @@ span.app-name {
 }
 
 .app-content {
-    min-height: 90vh;
+    display:flex; 
+    flex-direction:column;
+    height: 100vh;
 }
+
+footer {
+    margin-top:auto;
+    width:100%;
+}
+

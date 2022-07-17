@@ -1,16 +1,24 @@
 
 
 
+<div class="main">
+    <div class="card-container">
 
-<div class="card-container">
+        <div *ngFor="let product of products | slice:((paginator.pageIndex)*paginator.pageSize):((paginator.pageIndex+1)*paginator.pageSize)">
+            <app-product-card
+                [products]="products"
+                [product]="product"
+                (productDeletedEvent)="deleteProduct($event)"
+            >
+            </app-product-card>
+        </div>
 
-    <div *ngFor="let product of products">
-        <app-product-card
-            [products]="products"
-            [product]="product"
-            (productDeletedEvent)="deleteProduct($event)"
-        >
-        </app-product-card>
     </div>
-
 </div>
+<mat-paginator #paginator
+    [length]="products.length"
+    [pageSize]="8"
+    [pageSizeOptions]="[8, 16, 32, 64]"
+    class="paginator">
+>
+</mat-paginator>

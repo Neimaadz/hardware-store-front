@@ -7,7 +7,7 @@
         <button mat-icon-button (click)="snav.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
-        <span class="app-name">Hardware Store</span>
+        <a routerLink="/" ><span class="app-name">Hardware Store</span></a>
         <div class="user_menu_panel">
             <button mat-icon-button [matMenuTriggerFor]="manage_menu" *ngIf="currentUser">
                 <mat-icon>more_vert</mat-icon>
@@ -72,8 +72,10 @@
         <mat-sidenav-content>
             <div class="app-content">
                 <router-outlet></router-outlet>
+                <footer>
+                    <app-footer></app-footer>
+                </footer>
             </div>
-            <app-footer></app-footer>
         </mat-sidenav-content>
 
     
